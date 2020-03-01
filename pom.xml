@@ -15,6 +15,12 @@
 			<organizationUrl></organizationUrl>
 		</developer>
 	</developers>
+	<distributionManagement>
+		<site>
+			<id>shrek</id>
+			<url>scp://nagyviktor@shrek.unideb.hu:2222/home/nagyviktor/public_html/${project.artifactId}</url>
+		</site>
+	</distributionManagement>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.build.outputEncoding>UTF-8</project.build.outputEncoding>
@@ -135,6 +141,18 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.8.2</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.wagon</groupId>
+						<artifactId>wagon-ssh</artifactId>
+						<version>3.3.4</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
